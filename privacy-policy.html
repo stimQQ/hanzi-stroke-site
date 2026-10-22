@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>Privacy Policy for Hanzi Stroke</h1>
-<p class="meta">Last updated: April 29, 2026</p>
+<p class="meta">Last updated: October 22, 2026</p>
 
 <p>This Privacy Policy describes how the mobile application <strong>Hanzi Stroke</strong> ("the App", "we", "our") handles information when you use it. By using the App, you agree to the practices described below.</p>
 
@@ -25,34 +25,38 @@
 <h2>2. Information we collect</h2>
 <p>Hanzi Stroke is designed to work offline as a learning tool. We do <strong>not</strong> operate any user accounts, analytics, or backend servers that collect personal data. Specifically:</p>
 <ul>
-  <li><strong>Personal identifiers:</strong> We do not collect names, email addresses, phone numbers, device IDs, or precise location.</li>
-  <li><strong>Microphone (voice input):</strong> The App uses your device's microphone only when you actively start a pronunciation-practice exercise. Audio is processed by your device's built-in speech recognition service (Apple's Speech framework on iOS; Google's on-device speech service on Android) to convert speech to text. Hanzi Stroke does not record, store, or transmit your audio.</li>
-  <li><strong>Local storage:</strong> Your in-app settings, learning progress, and favorites are stored only on your device using local storage (SharedPreferences and a local SQLite database). This data never leaves your device.</li>
-  <li><strong>Network access:</strong> The App requests internet permission so that the operating system's text-to-speech and speech-recognition components may operate, and so the operating system may load required system resources. The App itself does not transmit your personal data to our servers.</li>
+  <li><strong>Personal identifiers:</strong> We do not collect names, email addresses, phone numbers, or location.</li>
+  <li><strong>Microphone (voice lookup):</strong> The App uses your device's microphone only while voice lookup is listening, after you tap the microphone button. Audio is processed by your device's speech recognition service (Apple's Speech framework on iOS; the system speech recognizer on Android, usually provided by Google) to convert speech to text. Depending on your device and settings, that service may send the audio to its provider to transcribe it. Hanzi Stroke itself does not record, store, or transmit your audio.</li>
+  <li><strong>Camera and photos (photo lookup):</strong> When you use photo lookup, you take a picture or choose one from your photo library. The Chinese text in it is recognized on your device by Google ML Kit. The photo is not uploaded; it stays in the App's temporary cache on your device, which the system can clear at any time.</li>
+  <li><strong>ML Kit diagnostics:</strong> Google ML Kit, which the App uses for on-device text recognition, sends Google diagnostic and usage information: device model and OS version, the App's package name and version, performance metrics, error codes, and a per-installation identifier that is not meant to identify you or your device. It does not include your photos or the recognized text. The information is encrypted in transit and used by Google to maintain and improve ML Kit. See <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit's data disclosure</a>.</li>
+  <li><strong>Local storage:</strong> Your in-app settings, favorites, and recent searches are stored only on your device using local storage (SharedPreferences and a local SQLite database). This data never leaves your device.</li>
+  <li><strong>Network access:</strong> The App requests internet permission so that the operating system's text-to-speech and speech-recognition services can work, and so ML Kit can send the diagnostic information described above. The App itself does not transmit your personal data to our servers.</li>
 </ul>
 
 <h2>3. Permissions we request</h2>
 <ul>
-  <li><strong>Microphone (RECORD_AUDIO)</strong> — required to recognize your spoken Chinese pronunciation. Only used while a practice session is active.</li>
-  <li><strong>Internet (INTERNET)</strong> — required for system-level text-to-speech and speech-recognition components on some devices.</li>
+  <li><strong>Microphone (RECORD_AUDIO)</strong> — required for voice lookup. Only used while voice lookup is listening.</li>
+  <li><strong>Camera and photo library</strong> — used only for photo lookup, when you choose to take or pick a photo. On iOS the system asks for these permissions; on Android the App uses the system camera app and photo picker, so no permission is needed.</li>
+  <li><strong>Internet (INTERNET)</strong> — required for system-level text-to-speech and speech-recognition services on some devices, and for ML Kit diagnostics.</li>
 </ul>
 
 <h2>4. Third-party services</h2>
-<p>The App relies on the following platform-provided services. Their handling of voice/text data is governed by their own privacy policies:</p>
+<p>The App relies on the following services. Their handling of data is governed by their own privacy policies:</p>
 <ul>
   <li>Apple Speech &amp; AVFoundation (iOS)</li>
   <li>Google Speech Services and Android TextToSpeech engine (Android)</li>
+  <li>Google ML Kit text recognition (on-device; sends the diagnostic information described above)</li>
 </ul>
-<p>We do not integrate any third-party advertising SDKs, analytics SDKs, or crash reporting services that collect personal information.</p>
+<p>Apart from ML Kit's diagnostics, we do not integrate any advertising SDKs, analytics SDKs, or crash reporting services.</p>
 
 <h2>5. Children's privacy</h2>
 <p>The App is suitable for general audiences, including children. We do not knowingly collect personal information from any user, including children under 13. If you believe a child has provided personal information through the App, please contact us so we can address the issue.</p>
 
 <h2>6. Data security</h2>
-<p>Because all user-generated data stays on the device, security depends on the security of your device. We recommend enabling a device passcode and keeping your operating system up to date.</p>
+<p>Because your learning data stays on the device, its security depends on the security of your device. We recommend enabling a device passcode and keeping your operating system up to date.</p>
 
 <h2>7. Your rights</h2>
-<p>You can delete all locally stored data at any time by uninstalling the App. There is no remote data for us to delete because we do not collect any.</p>
+<p>You can delete all locally stored data at any time by uninstalling the App. We hold no data about you on any server. Diagnostic information sent by ML Kit is handled by Google under its own policies.</p>
 
 <h2>8. Changes to this policy</h2>
 <p>We may update this Privacy Policy from time to time. The updated version will be indicated by an updated "Last updated" date and will be effective as soon as it is accessible.</p>
